@@ -11,6 +11,11 @@ use PHPUnit\Framework\TestCase;
 
 class AvaliadorTest extends TestCase
 {
+    private $leiloeiro;
+
+    protected function setUp(): void{
+       $this->leiloeiro = new Avaliador();
+    }
     /** 
     * @dataProvider leilaoEmOrdemAleatoria
     * @dataProvider leilaoEmOrdemCrescente
@@ -18,13 +23,12 @@ class AvaliadorTest extends TestCase
     */ 
 
     public function testAvaliadorDeveEnconbtrarOmaiorValorDelanceEmOrdemCrescente(Leilao $leilao){
-       
         
-        $leiloeiro = new Avaliador();
+     
 
-        $leiloeiro->avalia($leilao);
+        $this->leiloeiro->avalia($leilao);
         
-        $maiorValor = $leiloeiro->getmaiorValor();
+        $maiorValor = $this->leiloeiro->getmaiorValor();
         
         $valorEsperado = 2500;
 
@@ -39,15 +43,10 @@ class AvaliadorTest extends TestCase
     */ 
 
     public function testAvaliadorDeveEnconbtrarOmenorValorDelance(Leilao $leilao){
-       
+     
+        $this->leiloeiro->avalia($leilao);
         
-        $leiloeiro = new Avaliador();
-        $leiloeiro->avalia($leilao);
-        
-        $menorValor = $leiloeiro->getmenorValor();
-        
-      
-
+        $menorValor = $this->leiloeiro->getmenorValor();
         self::assertEquals(1700,$menorValor);
     }
     
@@ -59,13 +58,9 @@ class AvaliadorTest extends TestCase
 
     public function testAvaliadorDeveEnconbtrarOmenorValorDelanceEmOrdemCrescente(Leilao $leilao){
       
-     
-       
+        $this->leiloeiro->avalia($leilao);
         
-        $leiloeiro = new Avaliador();
-        $leiloeiro->avalia($leilao);
-        
-        $menorValor = $leiloeiro->getmenorValor();
+        $menorValor = $this->leiloeiro->getmenorValor();
         
         self::assertEquals(1700,$menorValor);
     }
@@ -124,6 +119,4 @@ class AvaliadorTest extends TestCase
         ];
 
     }
- 
-
 }
