@@ -1,7 +1,7 @@
 <?php 
 namespace Alura\Leilao\Tests\Service;
 
-
+/*Parei na aula 07 xml capitulo 04*/
 use Alura\Leilao\Model\Lance;
 use Alura\Leilao\Model\Leilao;
 use Alura\Leilao\Model\Usuario;
@@ -76,7 +76,7 @@ class AvaliadorTest extends TestCase
         $leilao->recebeLance(new Lance($joao , 2000));
         $leilao->recebeLance(new Lance($maria , 2500));
 
-        return [
+        return ['ordem-crescente'=>
             [$leilao]
         ];
 
@@ -95,7 +95,7 @@ class AvaliadorTest extends TestCase
         
     
 
-        return [
+        return ['ordem-Decrescente'=>
             [$leilao]
         ];
 
@@ -114,7 +114,7 @@ class AvaliadorTest extends TestCase
         $leilao->recebeLance(new Lance($ana, 1700));
         
     
-        return [
+        return ['ordem-Aleatoria'=>
             [$leilao]
         ];
 
