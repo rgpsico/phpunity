@@ -1,0 +1,11 @@
+Alura\Leilao\Tests\Service\Avaliador
+ [x] Avaliador deve enconbtrar omaior valor delance em ordem crescente with data set "ordem-Aleatoria"
+ [x] Avaliador deve enconbtrar omaior valor delance em ordem crescente with data set "ordem-crescente"
+ [x] Avaliador deve enconbtrar omaior valor delance em ordem crescente with data set "ordem-Decrescente"
+ [x] Avaliador deve enconbtrar omenor valor delance with data set "ordem-Aleatoria"
+ [x] Avaliador deve enconbtrar omenor valor delance with data set "ordem-crescente"
+ [x] Avaliador deve enconbtrar omenor valor delance with data set "ordem-Decrescente"
+ [x] Avaliador deve enconbtrar omenor valor delance em ordem crescente with data set "ordem-Aleatoria"
+ [x] Avaliador deve enconbtrar omenor valor delance em ordem crescente with data set "ordem-crescente"
+ [x] Avaliador deve enconbtrar omenor valor delance em ordem crescente with data set "ordem-Decrescente"
+
