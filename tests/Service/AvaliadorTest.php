@@ -24,11 +24,8 @@ class AvaliadorTest extends TestCase
 
     public function testAvaliadorDeveEnconbtrarOmaiorValorDelanceEmOrdemCrescente(Leilao $leilao){
         $this->leiloeiro->avalia($leilao);
-        
         $maiorValor = $this->leiloeiro->getmaiorValor();
-        
         $valorEsperado = 2500;
-
         self::assertEquals(2500,$maiorValor);
     }
 

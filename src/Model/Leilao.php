@@ -2,6 +2,13 @@
 
 namespace Alura\Leilao\Model;
 
+/* 
+TESTES de regreção
+
+
+
+
+*/
 class Leilao
 {
     /** @var Lance[] */
