@@ -14,5 +14,7 @@ Alura\Leilao\Tests\Service\Avaliador
  [x] Avaliador deve enconbtrar omenor valor delance em ordem crescente with data set "ordem-Aleatoria"
  [x] Avaliador deve enconbtrar omenor valor delance em ordem crescente with data set "ordem-crescente"
  [x] Avaliador deve enconbtrar omenor valor delance em ordem crescente with data set "ordem-Decrescente"
+ [x] Leilao vazio nao pode ser avaliado
+ [x] Leilao finalizado nao pode ser avaliado
  [x] Avaliadordevebuscartresmaioresvalores
 

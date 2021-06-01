@@ -11,6 +11,7 @@ use PHPUnit\Framework\TestCase;
 
 class AvaliadorTest extends TestCase
 {
+    /**@var Avaliador*/ 
     private $leiloeiro;
 
     protected function setUp(): void{
@@ -21,6 +22,8 @@ class AvaliadorTest extends TestCase
     * @dataProvider leilaoEmOrdemCrescente
     * @dataProvider leilaoEmOrdemDeCrescente
     */ 
+        
+
 
     public function testAvaliadorDeveEnconbtrarOmaiorValorDelanceEmOrdemCrescente(Leilao $leilao){
         $this->leiloeiro->avalia($leilao);
@@ -57,6 +60,31 @@ class AvaliadorTest extends TestCase
         $menorValor = $this->leiloeiro->getmenorValor();
         
         self::assertEquals(1700,$menorValor);
+    }
+
+
+
+    public function testLeilaoVazioNaoPodeSerAvaliado(){
+
+        $this->expectException(\DomainException::class);
+        $this->expectExceptionMessage('Não é possível avaliar leilão vazio');
+        $leilao = new Leilao('Fusca Azul');
+        $this->leiloeiro->avalia($leilao);
+         
+      
+    }
+
+    public function testLeilaoFinalizadoNaoPodeSerAvaliado(){
+
+        $this->expectException(\DomainException::class);
+        $this->expectExceptionMessage('Leilao já finalizado');
+        $leilao = new Leilao('Fiat 147 0km');
+        $leilao->recebeLance(new lance(new Usuario('Teste'),2000));
+        $leilao->finaliza();
+
+        $this->leiloeiro->avalia($leilao);
+
+
     }
 
     public function leilaoEmOrdemCrescente(){

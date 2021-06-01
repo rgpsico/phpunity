@@ -9,15 +9,20 @@ use PHPUnit\Framework\TestCase;
 class LeilaoTest extends TestCase
 {
 
+    
+
     public function testLeilaoNaoDeveReceberLancesRepetidos(){
+
+        $this->expectException(\DomainException::class);
+        $this->expectExceptionMessage('Usuario não pode propor 2 lances consecutivos');
+
         $leilao = new leilao('Variante');
         $ana = new Usuario('Ana');
 
         $leilao->recebeLance(new Lance($ana , 1000));
         $leilao->recebeLance(new Lance($ana, 1500));
 
-        static::assertCount(1,$leilao->getLances());
-        static::assertEquals(1000,$leilao->getLances()[0]->getValor());
+      
 
     }
     /**
@@ -52,6 +57,9 @@ class LeilaoTest extends TestCase
     }
 
     public function testeLeilaoNaoDeveAceitarMaisDe5LancesPorUsuario(){
+        $this->expectException(\Domainexception::class);
+        $this->expectExceptionMessage('Usuario não pode propor mai de 3 lances consecutivos');
+        
         $leilao = new Leilao('Brasilia amarela');
         $joao = new Usuario('Joao');
         $maria = new Usuario("Maria");
